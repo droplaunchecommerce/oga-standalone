@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Zap, Star } from 'lucide-react'
 import { type Product, formatPrice, rarityConfig } from '@/lib/products'
+import { asset } from '@/lib/asset'
 
 interface Props {
   product: Product
@@ -39,7 +40,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
         <Link to={`/product/${product.slug}`} className="relative block overflow-hidden flex-shrink-0"
           style={{ aspectRatio: '3/4' }}>
           <img
-            src={product.image}
+            src={asset(product.image)}
             alt={product.name}
             className="w-full h-full object-cover"
             style={{

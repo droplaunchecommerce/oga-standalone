@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Zap, Shield, Key, Headphones, Check, Star, ArrowRight, ChevronDown, Package } from 'lucide-react'
 import { products } from '@/lib/products'
+import { asset } from '@/lib/asset'
 import ProductCard from '@/components/product/ProductCard'
 
 // ─── Live Ticker ──────────────────────────────────────────────────────────────
@@ -43,13 +44,13 @@ function LiveTicker() {
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 const PAYMENTS = [
-  { src: '/assets/payments/paypal.png',    alt: 'PayPal' },
-  { src: '/assets/payments/klarna.png',    alt: 'Klarna' },
-  { src: '/assets/payments/visa.png',      alt: 'Visa' },
-  { src: '/assets/payments/mastercard.png',alt: 'Mastercard' },
-  { src: '/assets/payments/sepa.png',      alt: 'SEPA' },
-  { src: '/assets/payments/applepay.png',  alt: 'Apple Pay' },
-  { src: '/assets/payments/googlepay.png', alt: 'Google Pay' },
+  { src: asset('assets/payments/paypal.png'),    alt: 'PayPal' },
+  { src: asset('assets/payments/klarna.png'),    alt: 'Klarna' },
+  { src: asset('assets/payments/visa.png'),      alt: 'Visa' },
+  { src: asset('assets/payments/mastercard.png'),alt: 'Mastercard' },
+  { src: asset('assets/payments/sepa.png'),      alt: 'SEPA' },
+  { src: asset('assets/payments/applepay.png'),  alt: 'Apple Pay' },
+  { src: asset('assets/payments/googlepay.png'), alt: 'Google Pay' },
 ]
 
 function Hero() {
@@ -164,7 +165,7 @@ function Hero() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
                 <img
-                  src="/assets/skins/renegade.png"
+                  src={asset('assets/skins/renegade.png')}
                   alt="Renegade Raider Pack"
                   className="w-full object-cover"
                   style={{ aspectRatio: '3/4' }}

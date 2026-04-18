@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { asset } from '@/lib/asset'
 
 const navLinks = [
   { href: '/#products', label: 'Packs' },
@@ -37,7 +38,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src="/assets/logo.png"
+            src={asset('assets/logo.png')}
             alt="OGAccount.de"
             className="h-8 w-auto"
             onError={e => { e.currentTarget.style.display = 'none' }}

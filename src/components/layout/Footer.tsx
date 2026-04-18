@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { asset } from '@/lib/asset'
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src="/assets/logo.png" alt="OGAccount.de" className="h-7 w-auto"
+            <img src={asset('assets/logo.png')} alt="OGAccount.de" className="h-7 w-auto"
               onError={e => { e.currentTarget.style.display = 'none' }} />
             <span className="font-display text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
               OGA<span style={{ color: 'var(--accent-primary)' }}>.</span>
