@@ -10,7 +10,7 @@ import Legal from '@/routes/Legal'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/oga-standalone">
       <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg-void)' }}>
         <Header />
         <main className="flex-1">
