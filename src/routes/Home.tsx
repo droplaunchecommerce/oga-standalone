@@ -56,169 +56,135 @@ const PAYMENTS = [
 function Hero() {
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0])
-  const y = useTransform(scrollYProgress, [0, 1], [0, 60])
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-mesh">
-      {/* Background radials */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 right-1/4 w-[700px] h-[700px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(160,32,240,0.18) 0%, transparent 60%)', filter: 'blur(80px)' }} />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(255,199,0,0.1) 0%, transparent 65%)', filter: 'blur(60px)' }} />
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: 'var(--bg-void)' }}>
+
+      {/* ── Full-bleed skin image (right 55%) ── */}
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[58%] pointer-events-none">
+        <motion.img
+          src={asset('assets/skins/renegade.png')}
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '70% center', scale: imgScale }}
+        />
+        {/* Gradient: left fade (desktop only) */}
+        <div className="hidden lg:block absolute inset-0"
+          style={{ background: 'linear-gradient(to right, var(--bg-void) 0%, rgba(8,5,15,0.85) 20%, rgba(8,5,15,0.3) 55%, transparent 80%)' }} />
+        {/* Gradient: top + bottom */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(8,5,15,0.55) 0%, transparent 18%, transparent 72%, rgba(8,5,15,0.85) 100%)' }} />
+        {/* Mobile full overlay */}
+        <div className="lg:hidden absolute inset-0" style={{ background: 'rgba(8,5,15,0.72)' }} />
+
+        {/* Floating badges on image */}
+        <motion.div
+          className="absolute top-24 right-8 px-3 py-2 rounded-xl text-xs font-mono font-bold hidden lg:flex items-center gap-1.5"
+          style={{ background: 'rgba(0,229,255,0.1)', border: '1px solid rgba(0,229,255,0.35)', color: 'var(--accent-cyan)', backdropFilter: 'blur(16px)' }}
+          animate={{ y: [0, -6, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}>
+          ⚡ Sofort-Lieferung
+        </motion.div>
+
+        {/* Price / rarity card floating bottom-right */}
+        <motion.div
+          className="absolute bottom-16 right-8 p-4 rounded-2xl hidden lg:block"
+          style={{ background: 'rgba(8,5,15,0.7)', border: '1px solid rgba(255,199,0,0.3)', backdropFilter: 'blur(20px)' }}
+          animate={{ y: [0, 5, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+          <span className="block text-xs font-mono font-bold tracking-widest uppercase mb-1" style={{ color: '#ffd700' }}>★ Legendary</span>
+          <p className="font-display font-bold text-base mb-0.5" style={{ color: 'var(--text-primary)' }}>Renegade Raider Pack</p>
+          <div className="flex items-center gap-3">
+            <span className="text-xs line-through" style={{ color: 'var(--text-faint)' }}>199,99 €</span>
+            <span className="font-display font-bold text-xl text-gradient-gold">149,99 €</span>
+          </div>
+        </motion.div>
+
+        {/* Gold glow orb */}
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(255,199,0,0.12) 0%, transparent 65%)', filter: 'blur(60px)' }} />
       </div>
 
-      <motion.div style={{ opacity, y }} className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-24 pb-20">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+      {/* ── Left: text content ── */}
+      <motion.div style={{ opacity }} className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-24">
+        <div className="max-w-xl lg:max-w-[52%]">
 
-          {/* ── Left: copy ── */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono mb-7"
-              style={{ background: 'rgba(0,230,118,0.07)', border: '1px solid rgba(0,230,118,0.2)', color: 'var(--success)' }}>
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--success)' }} />
-              Vertrauenswürdiger Shop seit 2023 · 1.247+ Kunden
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.7 }}
-              className="font-display font-bold leading-[1.05] tracking-tight mb-6"
-              style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', color: 'var(--text-primary)' }}>
-              Seltene
-              <br />
-              <span className="text-gradient">OG Accounts.</span>
-              <br />
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.5em', fontWeight: 500 }}>
-                Sofort. Sicher. Legendary.
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-base sm:text-lg leading-relaxed mb-8 max-w-lg"
-              style={{ color: 'var(--text-muted)' }}>
-              Renegade Raider, Ghoul Trooper, Black Knight & mehr.
-              Digitale Lieferung in unter 2 Minuten — direkt nach Zahlung.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-3 mb-8">
-              <a href="#products"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-display font-bold text-base transition-all duration-200"
-                style={{ background: 'var(--accent-primary)', color: '#fff', boxShadow: '0 0 28px rgba(160,32,240,0.5)' }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent-hot)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(224,0,192,0.6)' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 0 28px rgba(160,32,240,0.5)' }}>
-                <Zap className="w-5 h-5" />
-                Packs entdecken
-              </a>
-              <Link to="/drop-room"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-display font-bold text-base transition-all duration-200"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1.5px solid rgba(255,255,255,0.12)', color: 'var(--text-primary)' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(160,32,240,0.5)'; e.currentTarget.style.background = 'rgba(160,32,240,0.08)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}>
-                🎰 Drop Room
-              </Link>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mb-8">
-              <LiveTicker />
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-              <p className="text-xs font-mono tracking-widest uppercase mb-3" style={{ color: 'var(--text-faint)' }}>
-                Sichere Zahlung
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {PAYMENTS.map(p => (
-                  <div key={p.alt}
-                    className="h-9 px-3 rounded-lg flex items-center"
-                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    <img src={p.src} alt={p.alt} className="h-4 w-auto object-contain" />
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ── Right: hero skin ── */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.8 }}
-            className="relative flex items-center justify-center lg:justify-end">
+            initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono mb-7"
+            style={{ background: 'rgba(0,230,118,0.07)', border: '1px solid rgba(0,230,118,0.22)', color: 'var(--success)' }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--success)' }} />
+            Vertrauenswürdiger Shop seit 2023 · 1.247+ Kunden
+          </motion.div>
 
-            {/* Glow orb */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-72 h-72 rounded-full"
-                style={{ background: 'radial-gradient(circle, rgba(255,199,0,0.15) 0%, transparent 70%)', filter: 'blur(50px)' }} />
-            </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.65 }}
+            className="font-display font-bold leading-[1.02] tracking-tight mb-5"
+            style={{ fontSize: 'clamp(3rem, 6.5vw, 5.8rem)', color: 'var(--text-primary)' }}>
+            Seltene<br />
+            <span className="text-gradient">OG Accounts.</span>
+          </motion.h1>
 
-            <div className="relative z-10 w-full max-w-xs sm:max-w-sm">
-              {/* Main card */}
-              <motion.div
-                className="relative rounded-2xl overflow-hidden"
-                style={{
-                  border: '1px solid rgba(255,199,0,0.35)',
-                  boxShadow: '0 0 60px rgba(255,199,0,0.12), 0 0 120px rgba(255,199,0,0.06), 0 40px 80px rgba(0,0,0,0.6)',
-                }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
-                <img
-                  src={asset('assets/skins/renegade.png')}
-                  alt="Renegade Raider Pack"
-                  className="w-full object-cover"
-                  style={{ aspectRatio: '3/4' }}
-                />
-                <div className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(8,5,15,0.95) 0%, rgba(8,5,15,0.3) 45%, transparent 70%)' }} />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-2.5 py-0.5 rounded text-xs font-mono font-bold tracking-widest uppercase mb-2"
-                    style={{ color: '#ffd700', background: 'rgba(255,215,0,0.08)', border: '1px solid rgba(255,215,0,0.25)' }}>
-                    ★ Legendary
-                  </span>
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <p className="font-display font-bold text-lg" style={{ color: 'var(--text-primary)' }}>Renegade Raider Pack</p>
-                      <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Der OG Klassiker</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs line-through mb-0.5" style={{ color: 'var(--text-faint)' }}>199,99 €</p>
-                      <p className="font-display font-bold text-2xl text-gradient-gold">149,99 €</p>
-                    </div>
-                  </div>
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.6 }}
+            className="text-lg sm:text-xl font-display mb-3"
+            style={{ color: 'var(--text-muted)', fontWeight: 500 }}>
+            Sofort. Sicher. Legendary.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.22, duration: 0.6 }}
+            className="text-base leading-relaxed mb-8"
+            style={{ color: 'var(--text-muted)', maxWidth: '420px' }}>
+            Renegade Raider, Ghoul Trooper, Black Knight & mehr — Lieferung in unter 2 Minuten, direkt nach Zahlung.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+            className="flex flex-wrap gap-3 mb-8">
+            <a href="#products"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl font-display font-bold text-base transition-all duration-200"
+              style={{ background: 'var(--accent-primary)', color: '#fff', boxShadow: '0 0 32px rgba(160,32,240,0.55)' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent-hot)'; e.currentTarget.style.boxShadow = '0 0 44px rgba(224,0,192,0.65)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 0 32px rgba(160,32,240,0.55)' }}>
+              <Zap className="w-5 h-5" />
+              Packs entdecken
+            </a>
+            <Link to="/drop-room"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl font-display font-bold text-base transition-all duration-200"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1.5px solid rgba(255,255,255,0.14)', color: 'var(--text-primary)' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(160,32,240,0.55)'; e.currentTarget.style.background = 'rgba(160,32,240,0.1)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}>
+              🎰 Drop Room
+            </Link>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.38 }} className="mb-8">
+            <LiveTicker />
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.46 }}>
+            <p className="text-xs font-mono tracking-widest uppercase mb-3" style={{ color: 'var(--text-faint)' }}>
+              Sichere Zahlung
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {PAYMENTS.map(p => (
+                <div key={p.alt} className="h-9 px-3 rounded-lg flex items-center"
+                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.09)' }}>
+                  <img src={p.src} alt={p.alt} className="h-4 w-auto object-contain" />
                 </div>
-              </motion.div>
-
-              {/* Floating: Sofort-Lieferung */}
-              <motion.div
-                className="absolute -top-4 -right-4 sm:-right-6 px-3 py-2 rounded-xl text-xs font-mono font-bold"
-                style={{ background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.3)', color: 'var(--accent-cyan)', backdropFilter: 'blur(12px)' }}
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}>
-                ⚡ Sofort-Lieferung
-              </motion.div>
-
-              {/* Floating: Kunden */}
-              <motion.div
-                className="absolute -bottom-4 -left-4 sm:-left-6 px-3 py-2 rounded-xl text-xs font-mono"
-                style={{ background: 'rgba(0,230,118,0.08)', border: '1px solid rgba(0,230,118,0.3)', color: 'var(--success)', backdropFilter: 'blur(12px)' }}
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}>
-                <span className="font-bold">1.247+</span> zufriedene Kunden
-              </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
+      </motion.div>
 
-        {/* Scroll cue */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity }}
-          style={{ color: 'var(--text-faint)' }}>
-          <ChevronDown className="w-5 h-5" />
-        </motion.div>
+      {/* Scroll cue */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        animate={{ y: [0, 8, 0] }} transition={{ duration: 2.2, repeat: Infinity }}
+        style={{ color: 'var(--text-faint)' }}>
+        <ChevronDown className="w-5 h-5" />
       </motion.div>
     </section>
   )

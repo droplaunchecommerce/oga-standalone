@@ -41,14 +41,7 @@ export default function Header() {
             src={asset('assets/logo.png')}
             alt="OGAccount.de"
             className="h-8 w-auto"
-            onError={e => { e.currentTarget.style.display = 'none' }}
           />
-          <span
-            className="font-display text-xl font-bold tracking-tight"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            OGA<span style={{ color: 'var(--accent-primary)' }}>.</span>
-          </span>
         </Link>
 
         {/* Desktop Nav */}
