@@ -1,0 +1,235 @@
+[
+  {
+    "id": "renegade-raider-pack",
+    "slug": "renegade-raider-pack",
+    "name": "Renegade Raider Pack",
+    "subtitle": "Der legendärste Skin aller Zeiten – Black Edition",
+    "price": 149.99,
+    "compareAtPrice": 199.99,
+    "copeCartLink": "https://copecart.com/products/ec24e6d0/checkout",
+    "badge": "Bestseller",
+    "rarity": "legendary",
+    "chips": ["OG Skin", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.9,
+    "reviewCount": 1247,
+    "image": "/assets/skins/renegade.png",
+    "imageFallback": "/assets/skins/renegade.png",
+    "description": "Das Renegade Pack ist Teil unserer exklusiven OGA-Serie und bringt dir einen Gaming-Account mit seltenem OG-Style, inspiriert von einem der begehrtesten Skins aus bekannten Battle-Royale-Spielen.",
+    "bullets": [
+      "Seltene OG-Optik im Renegade-Style",
+      "Sofort einsatzbereit – Zugangsdaten nach Kauf",
+      "Auswahl der gewünschten Plattform: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert",
+      "Limitierte Verfügbarkeit weltweit"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "travis-scott-pack",
+    "slug": "travis-scott-pack",
+    "name": "Travis Scott Pack",
+    "subtitle": "OGA Original – inspiriert von legendären In-Game-Events",
+    "price": 139.99,
+    "compareAtPrice": 179.99,
+    "copeCartLink": "https://copecart.com/products/56af1645/checkout",
+    "badge": "Bestseller",
+    "rarity": "epic",
+    "chips": ["Legendary", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.8,
+    "reviewCount": 892,
+    "image": "/assets/skins/travis-scott.png",
+    "imageFallback": "/assets/skins/travis-scott.png",
+    "description": "Das OGA Travis Scott Pack ist für Sammler und Fans legendärer In-Game-Events gemacht.",
+    "bullets": [
+      "Inspiriert von legendären Battle-Royale-Events",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "og-skull-pack",
+    "slug": "og-skull-pack",
+    "name": "OG Skull Pack",
+    "subtitle": "Eine Ikone – selten und unwiderstehlich",
+    "price": 139.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/fa0dd397/checkout",
+    "badge": null,
+    "rarity": "epic",
+    "chips": ["OG Skin", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.7,
+    "reviewCount": 1034,
+    "image": "/assets/skins/skull-trooper.png",
+    "imageFallback": "/assets/skins/skull-trooper.png",
+    "description": "Der Skull Trooper Style gehört zu den bekanntesten und seltensten Looks in der Battle-Royale-Geschichte.",
+    "bullets": [
+      "Ikonischer Skull-Style",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "og-ghoul-pack",
+    "slug": "og-ghoul-pack",
+    "name": "OG Ghoul Pack",
+    "subtitle": "Die Ikone kehrt zurück – sichere dir deinen Ghoul",
+    "price": 129.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/1b5ee89b/checkout",
+    "badge": null,
+    "rarity": "rare",
+    "chips": ["OG Skin", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.9,
+    "reviewCount": 756,
+    "image": "/assets/skins/ghoul-trooper.png",
+    "imageFallback": "/assets/skins/ghoul-trooper.png",
+    "description": "Der Ghoul Trooper Style gehört zu den begehrtesten OG-Looks aller Zeiten.",
+    "bullets": [
+      "OG Ghoul Trooper Style",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "ikonik-pack",
+    "slug": "ikonik-pack",
+    "name": "Ikonik Pack",
+    "subtitle": "OGA Original mit OG-Style",
+    "price": 139.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/2b0687d3/checkout",
+    "badge": null,
+    "rarity": "epic",
+    "chips": ["OG Skin", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.8,
+    "reviewCount": 567,
+    "image": "/assets/skins/ikonik.png",
+    "imageFallback": "/assets/skins/ikonik.png",
+    "description": "Das Ikonik Pack ist ein OGA Original – inspiriert von einem der bekanntesten Samsung-exklusiven Styles.",
+    "bullets": [
+      "Ikonik OG-Style",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "black-knight-pack",
+    "slug": "black-knight-pack",
+    "name": "Black Knight Pack",
+    "subtitle": "Legendärer OG-Status – Ritterstil mit Aura",
+    "price": 149.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/514445b2/checkout",
+    "badge": null,
+    "rarity": "legendary",
+    "chips": ["OG Skin", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.9,
+    "reviewCount": 423,
+    "image": "/assets/skins/black-knight.png",
+    "imageFallback": "/assets/skins/black-knight.png",
+    "description": "Der Black Knight Style ist das ultimative Symbol des Season-2-Prestiges.",
+    "bullets": [
+      "Black Knight Season-2-Prestige-Style",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "og-aerial-pack",
+    "slug": "og-aerial-pack",
+    "name": "OG Aerial Pack",
+    "subtitle": "Extrem seltener Aerial-Assault-Trooper-Stil",
+    "price": 169.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/8f29e99a/checkout",
+    "badge": "Limited",
+    "rarity": "mythic",
+    "chips": ["Ultra Rare", "Full Access", "Sofort-Lieferung"],
+    "rating": 4.9,
+    "reviewCount": 312,
+    "image": "/assets/skins/aerial-assault.png",
+    "imageFallback": "/assets/skins/aerial-assault.png",
+    "description": "Der Aerial Assault Trooper gilt als einer der seltensten Styles überhaupt.",
+    "bullets": [
+      "Einer der seltensten OG-Styles weltweit",
+      "Sofort einsatzbereit nach Kauf",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  },
+  {
+    "id": "oga-triple-og-pack",
+    "slug": "oga-triple-og-pack",
+    "name": "OGA Triple OG Pack",
+    "subtitle": "Drei legendäre OG-Styles in einem Premium-Bundle",
+    "price": 199.99,
+    "compareAtPrice": null,
+    "copeCartLink": "https://copecart.com/products/7b0d6adf/checkout",
+    "badge": "Premium",
+    "rarity": "mythic",
+    "chips": ["3 OG Skins", "Premium Bundle", "Sofort-Lieferung"],
+    "rating": 5.0,
+    "reviewCount": 489,
+    "image": "/assets/skins/triple-og.png",
+    "imageFallback": "/assets/skins/triple-og.png",
+    "description": "Das OGA Triple OG Pack vereint drei der begehrtesten OG-Styles in einem einzigen Premium-Bundle.",
+    "bullets": [
+      "Renegade Raider + Aerial Assault Trooper + Ghoul Trooper Style",
+      "Das ultimative OG-Bundle",
+      "Auswahl: PC, PlayStation oder Xbox",
+      "Persönlich überprüft & abgesichert"
+    ],
+    "deliveryContents": [
+      "Zugangsdaten zu deinem OGA-Account",
+      "Sicherer Login mit passwortgeschützter Übergabe",
+      "Anleitung zur Übernahme",
+      "24/7 Support bei Fragen"
+    ]
+  }
+]
